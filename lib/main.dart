@@ -1,6 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:metropol/helpers/helpers.dart';
+import 'package:metropol/main/main_screen.dart';
+import 'package:metropol/onboarding/onboarding.dart';
+import 'package:metropol/registration/registration_screen.dart';
+import 'package:metropol/reservation/take_your_cofee.dart';
+import 'package:metropol/service_locator.dart';
 
 void main() {
+  // Setup GetIt service locator
+  setUpServiceLocator();
+
+
   runApp(MyApp());
 }
 
@@ -10,58 +20,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
 
-        primarySwatch: Colors.blue,
+        primaryColor: Helpers.greenColor,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+    initialRoute: RegistrationScreen.id,
+    routes: {
+      Onboarding.id: (context) => Onboarding(),
+      RegistrationScreen.id: (context) => RegistrationScreen(),
+      TakeYourCoffee.id: (context) => TakeYourCoffee(),
+      MainScreen.id: (context) => MainScreen(),
+    }
     );
   }
 }
