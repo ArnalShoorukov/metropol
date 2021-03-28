@@ -13,7 +13,10 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.w600);
+  static const TextStyle optionStyle = TextStyle(
+    fontSize: 30,
+    fontWeight: FontWeight.w600,
+  );
   static const List<Widget> _widgetOptions = <Widget>[
     Text(
       'Home',
@@ -33,138 +36,191 @@ class _MainScreenState extends State<MainScreen> {
     ),
   ];
 
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+/*  static const TextStyle optionStyle =
+  TextStyle(fontSize: 30, fontWeight: FontWeight.bold);*/
+  /*static const List<Widget> _widgetOptions = <Widget>[
+    Text(
+      'HOME PAGE',
+      style: optionStyle,
+    ),
+    Text(
+      'COURSE PAGE',
+      style: optionStyle,
+    ),
+    Text(
+      'CONTACT GFG',
+      style: optionStyle,
+    ),
+  ];*/
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          backgroundColor: Colors.white,
-          leading: IconButton(
-            onPressed: () {},
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Colors.white,
+        leading: IconButton(
+          onPressed: () {},
+          icon: const Icon(
+            Icons.arrow_back_ios,
+            color: Helpers.greenColor,
+          ),
+        ),
+        title: const Text(
+          'Залы',
+          style: TextStyle(
+            fontFamily: 'Arkhip',
+            fontWeight: FontWeight.w400,
+            fontSize: 36,
+            color: Helpers.greenColor,
+          ),
+        ),
+        actions: [
+          IconButton(
             icon: const Icon(
-              Icons.arrow_back_ios,
+              Icons.filter_list,
               color: Helpers.greenColor,
             ),
+            onPressed: () {},
           ),
-          title: const Text(
-            'Залы',
-            style: TextStyle(
-              fontFamily: 'Arkhip',
-              fontWeight: FontWeight.w400,
-              fontSize: 36,
-              color: Helpers.greenColor,
-            ),
-          ),
-          actions: [
-            IconButton(
-              icon: const Icon(
-                Icons.filter_list,
-                color: Helpers.greenColor,
+        ],
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Stack(
+                children: [
+                  Image.asset(
+                    Helpers.mainOne,
+                    width: double.maxFinite,
+                    fit: BoxFit.fitWidth,
+                    //height: 124,
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(bottom: 20.0),
+                  ),
+                  const Positioned(
+                    left: 0.0,
+                    bottom: 0.0,
+                    child: Padding(
+                      padding: EdgeInsets.all(16.0),
+                      child: Text(
+                        'Номера',
+                        style: TextStyle(
+                            fontFamily: 'Arkhip',
+                            fontWeight: FontWeight.w400,
+                            fontSize: 24,
+                            color: Colors.white),
+                      ),
+                    ),
+                  ),
+                ],
               ),
-              onPressed: () {},
-            ),
-          ],
-        ),
-        body: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                Stack(
-                  children: [
-                    Image.asset(
-                      Helpers.mainOne,
-                      width: double.maxFinite,
-                      fit: BoxFit.fitWidth,
-                      //height: 124,
-                    ),
-                    Container(
-                      margin: const EdgeInsets.only(bottom: 20.0),
-                    ),
-                    const Positioned(
-                      left: 0.0,
-                      bottom: 0.0,
-                      child: Padding(
-                        padding: EdgeInsets.all(16.0),
-                        child: Text(
-                          'Номера',
-                          style: TextStyle(
-                              fontFamily: 'Arkhip',
-                              fontWeight: FontWeight.w400,
-                              fontSize: 24,
-                              color: Colors.white),
-                        ),
+              const SizedBox(
+                height: 16,
+              ),
+              Stack(
+                children: [
+                  Image.asset(
+                    Helpers.mainTwo,
+                    width: double.maxFinite,
+                    fit: BoxFit.fitWidth,
+                    //height: 124,
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(bottom: 20.0),
+                  ),
+                  const Positioned(
+                    left: 0.0,
+                    bottom: 0.0,
+                    child: Padding(
+                      padding: EdgeInsets.all(16.0),
+                      child: Text(
+                        'Мероприятия',
+                        style: TextStyle(
+                            fontFamily: 'Arkhip',
+                            fontWeight: FontWeight.w400,
+                            fontSize: 24,
+                            color: Colors.white),
                       ),
                     ),
-                  ],
-                ),
-                const SizedBox(
-                  height: 16,
-                ),
-                Stack(
-                  children: [
-                    Image.asset(
-                      Helpers.mainTwo,
-                      width: double.maxFinite,
-                      fit: BoxFit.fitWidth,
-                      //height: 124,
-                    ),
-                    Container(
-                      margin: const EdgeInsets.only(bottom: 20.0),
-                    ),
-                    const Positioned(
-                      left: 0.0,
-                      bottom: 0.0,
-                      child: Padding(
-                        padding: EdgeInsets.all(16.0),
-                        child: Text(
-                          'Мероприятия',
-                          style: TextStyle(
-                              fontFamily: 'Arkhip',
-                              fontWeight: FontWeight.w400,
-                              fontSize: 24,
-                              color: Colors.white),
-                        ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 16,
+              ),
+              Stack(
+                children: [
+                  Image.asset(
+                    Helpers.mainThree,
+                    width: double.maxFinite,
+                    fit: BoxFit.fitWidth,
+                    //height: 124,
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(bottom: 20.0),
+                  ),
+                  const Positioned(
+                    left: 0.0,
+                    bottom: 0.0,
+                    child: Padding(
+                      padding: EdgeInsets.all(16.0),
+                      child: Text(
+                        'Конференции',
+                        style: TextStyle(
+                            fontFamily: 'Arkhip',
+                            fontWeight: FontWeight.w400,
+                            fontSize: 24,
+                            color: Colors.white),
                       ),
                     ),
-                  ],
-                ),
-                const SizedBox(
-                  height: 16,
-                ),
-                Stack(
-                  children: [
-                    Image.asset(
-                      Helpers.mainThree,
-                      width: double.maxFinite,
-                      fit: BoxFit.fitWidth,
-                      //height: 124,
-                    ),
-                    Container(
-                      margin: const EdgeInsets.only(bottom: 20.0),
-                    ),
-                    const Positioned(
-                      left: 0.0,
-                      bottom: 0.0,
-                      child: Padding(
-                        padding: EdgeInsets.all(16.0),
-                        child: Text(
-                          'Конференции',
-                          style: TextStyle(
-                              fontFamily: 'Arkhip',
-                              fontWeight: FontWeight.w400,
-                              fontSize: 24,
-                              color: Colors.white),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
-        bottomNavigationBar: Container(
+      ),
+      bottomNavigationBar: Theme(
+          data: Theme.of(context).copyWith(
+              canvasColor: Helpers.greenColor,
+              primaryColor: Colors.white,
+              textTheme: Theme.of(context).textTheme.copyWith(
+                    caption: const TextStyle(color: Colors.grey),
+                  )),
+          child: BottomNavigationBar(
+            items: const <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                title: Text('Бронирование'),
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.bookmark),
+                title: Text('Чат'),
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.contact_mail),
+                title: Text('Квиз'),
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.contact_mail),
+                title: Text('Личный кабинет'),
+              ),
+            ],
+            currentIndex: _selectedIndex,
+            selectedItemColor: Colors.white,
+            onTap: _onItemTapped,
+          )),
+    );
+    /* bottomNavigationBar: Container(
             decoration: BoxDecoration(color: Helpers.greenColor, boxShadow: [
               BoxShadow(
                 blurRadius: 32,
@@ -178,8 +234,8 @@ class _MainScreenState extends State<MainScreen> {
                   vertical: 8,
                 ),
                 child: GNav(
-                    /*  rippleColor: Colors.grey[300],
-    hoverColor: Colors.grey[100],*/
+                    */ /*  rippleColor: Colors.grey[300],
+    hoverColor: Colors.grey[100],*/ /*
                     gap: 4,
                     activeColor: Colors.black,
                     iconSize: 24,
@@ -214,6 +270,6 @@ class _MainScreenState extends State<MainScreen> {
                       });
                     }),
               ),
-            )));
+            )));*/
   }
 }
