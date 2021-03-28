@@ -80,9 +80,7 @@ class _MainScreenState extends State<MainScreen> {
                   ],
                 ),
               ),
-              const SizedBox(
-                height: 16,
-              ),
+              const SizedBox(height: 16),
               Stack(
                 children: [
                   Image.asset(
