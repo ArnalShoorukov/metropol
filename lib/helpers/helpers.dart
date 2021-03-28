@@ -1,8 +1,6 @@
-
 import 'package:flutter/material.dart';
 
-class Helpers{
-
+class Helpers {
   static const Color greenColor = Color(0xff003E20);
   static const Color yellowColor = Color(0xffA39262);
   static const Color greyColor = Color(0xffF2F2F2);
@@ -17,8 +15,20 @@ class Helpers{
   static const yandex = 'assets/images/yandex.png';
   static const facebook = 'assets/images/facebook.png';
   static const coffee = 'assets/images/coffee_cup.png';
+  static const qrCode = 'assets/images/qr_code.png';
   static const mainOne = 'assets/images/main_one.png';
   static const mainTwo = 'assets/images/main_two.png';
   static const mainThree = 'assets/images/main_three.png';
 
+  static const textStyle = TextStyle(
+    fontFamily: 'Corbel',
+    fontSize: 16,
+    color: Colors.black,
+  );
+
+  static const textStyleWhite = TextStyle(
+    fontFamily: 'Corbel',
+    fontSize: 16,
+    color: Colors.white,
+  );
 }

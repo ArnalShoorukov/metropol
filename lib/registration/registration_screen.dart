@@ -33,19 +33,19 @@ class RegistrationScreen extends StatelessWidget {
               const Text(
                 'Регистрация',
                 style: TextStyle(
-                    fontFamily: 'Arkhip',
-                    fontWeight: FontWeight.w400,
-                    fontSize: 36,
-                    color: Colors.white),
+                  fontFamily: 'Arkhip',
+                  fontSize: 36,
+                  color: Colors.white,
+                ),
               ),
               const SizedBox(height: 30),
               const Text(
-                'При регистрации   кофе в подарок!',
+                'При регистрации кофе в подарок!',
                 style: TextStyle(
-                    fontFamily: 'Corbel',
-                    fontWeight: FontWeight.w400,
-                    fontSize: 16,
-                    color: Colors.white),
+                  fontFamily: 'Corbel',
+                  fontSize: 16,
+                  color: Colors.white,
+                ),
               ),
               TextFormField(
                 textAlign: TextAlign.center,
@@ -65,6 +65,27 @@ class RegistrationScreen extends StatelessWidget {
                     )),
                     fillColor: Colors.white,
                     labelText: 'Имя'),
+              ),
+              const SizedBox(height: 8),
+              TextFormField(
+                keyboardType: TextInputType.phone,
+                textAlign: TextAlign.center,
+                style: const TextStyle(color: Colors.white),
+                cursorColor: Colors.white,
+                decoration: const InputDecoration(
+                    hintStyle: TextStyle(color: Colors.white),
+                    labelStyle: TextStyle(color: Colors.white),
+                    focusColor: Colors.white,
+                    enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                      color: Colors.white,
+                    )),
+                    focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                      color: Colors.white,
+                    )),
+                    fillColor: Colors.white,
+                    labelText: '+79000000000'),
               ),
               const SizedBox(height: 50),
               Center(
@@ -89,7 +110,7 @@ class RegistrationScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(height: 130),
+              const SizedBox(height: 100),
               Container(
                 width: double.maxFinite,
                 child: ElevatedButton(
@@ -107,10 +128,15 @@ class RegistrationScreen extends StatelessWidget {
                     Navigator.pushNamed(context, TakeYourCoffee.id);
                   },
                   child: const Text(
-                    'Забронировать',
+                    'Зарегистрироваться',
                     style: TextStyle(fontSize: 16, color: Colors.black),
                   ),
                 ),
+              ),
+              const SizedBox(height: 16),
+              const Text(
+                'Пропустить регистрацию',
+                style: Helpers.textStyleWhite,
               )
             ],
           ),

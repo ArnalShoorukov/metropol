@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:metropol/helpers/helpers.dart';
 import 'package:metropol/main/main_screen.dart';
 import 'package:metropol/onboarding/onboarding.dart';
-import 'package:metropol/reservation/take_your_cofee_qr.dart';
 
-class TakeYourCoffee extends StatelessWidget {
-  static const String id = '/coffee_screen';
+class TakeYourCoffeeQR extends StatelessWidget {
+  static const String id = '/coffee_qr_screen';
 
   @override
   Widget build(BuildContext context) {
@@ -48,11 +47,12 @@ class TakeYourCoffee extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 Image.asset(
-                  Helpers.coffee,
+                  Helpers.qrCode,
                   width: 187,
                   height: 156,
                 ),
-                const SizedBox(height: 100),
+                const SizedBox(height: 160),
+
                 Container(
                   width: double.maxFinite,
                   child: ElevatedButton(
@@ -70,30 +70,7 @@ class TakeYourCoffee extends StatelessWidget {
                       Navigator.pushNamed(context, MainScreen.id);
                     },
                     child: const Text(
-                      'Вернуться позже',
-                      style: TextStyle(fontSize: 16, color: Colors.black),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 16),
-                Container(
-                  width: double.maxFinite,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        onPrimary: Colors.white,
-                        primary: Colors.white,
-                        onSurface: Colors.white,
-                        side: const BorderSide(color: Colors.black),
-                        elevation: 20,
-                        minimumSize: const Size(150, 50),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30),
-                        )),
-                    onPressed: () {
-                      Navigator.pushNamed(context, TakeYourCoffeeQR.id);
-                    },
-                    child: const Text(
-                      'Получить сейчас',
+                      'Вернуться на главный экран',
                       style: TextStyle(fontSize: 16, color: Colors.black),
                     ),
                   ),
