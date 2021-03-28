@@ -203,15 +203,15 @@ class _MainScreenState extends State<MainScreen> {
                 title: Text('Бронирование'),
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.bookmark),
+                icon: Icon(Icons.mail_outline_sharp),
                 title: Text('Чат'),
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.contact_mail),
+                icon: Icon(Icons.local_fire_department_sharp),
                 title: Text('Квиз'),
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.contact_mail),
+                icon: Icon(Icons.account_circle_outlined),
                 title: Text('Личный кабинет'),
               ),
             ],
@@ -220,56 +220,5 @@ class _MainScreenState extends State<MainScreen> {
             onTap: _onItemTapped,
           )),
     );
-    /* bottomNavigationBar: Container(
-            decoration: BoxDecoration(color: Helpers.greenColor, boxShadow: [
-              BoxShadow(
-                blurRadius: 32,
-                color: Colors.black.withOpacity(.1),
-              )
-            ]),
-            child: SafeArea(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 15.0,
-                  vertical: 8,
-                ),
-                child: GNav(
-                    */ /*  rippleColor: Colors.grey[300],
-    hoverColor: Colors.grey[100],*/ /*
-                    gap: 4,
-                    activeColor: Colors.black,
-                    iconSize: 24,
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 10,
-                      vertical: 12,
-                    ),
-                    duration: const Duration(milliseconds: 400),
-                    tabBackgroundColor: Helpers.greyColor,
-                    tabs: [
-                      GButton(
-                        icon: Icons.home,
-                        text: 'Бронирование',
-                      ),
-                      GButton(
-                        icon: Icons.mail_outline_sharp,
-                        text: 'Чат',
-                      ),
-                      GButton(
-                        icon: Icons.local_fire_department_sharp,
-                        text: 'Квиз',
-                      ),
-                      GButton(
-                        icon: Icons.account_circle_outlined,
-                        text: 'Личный кабинет',
-                      ),
-                    ],
-                    selectedIndex: _selectedIndex,
-                    onTabChange: (index) {
-                      setState(() {
-                        _selectedIndex = index;
-                      });
-                    }),
-              ),
-            )));*/
   }
 }
